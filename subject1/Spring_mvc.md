@@ -1,0 +1,16 @@
+## 학습 키워드
+- [Spring](https://docs.spring.io/spring-framework/docs/current/reference/html/overview.html#overview)
+- Spring Boot
+- Spring initializer
+- Web Server와 Web Application Server(WAS)
+    - Tomcat
+- Model-View-Controller(MVC) 아키텍처 패턴
+- 관심사의 분리(Seperation of Concern)
+- Spring MVC
+- Java Annotation
+- Spring Annotation
+    - @RestController
+        - @Controller
+        - @ResponseBody
+    - @GetMapping
+        - @RequestMapping
