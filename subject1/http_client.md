@@ -1,13 +1,31 @@
-- TCP/IP 통신
-- TCP와 UDP
-- Socket과 Socket API 구분
-- URI와 URL
-- 호스트(host)
-    - IP 주소
-    - Domain name
-    - DNS
-- 포트(port)
-- path(경로)
-- Java text blocks
-- Java InputStream과 OutputStream
-- Java try-with-resources
+# HTTP Client
+## TCP/IP 통신
+TCP/IP는 컴퓨터 간 신뢰성 있는 통신을 하기 위해 고안된 통신 규약이다. 컴퓨터들의 고유한 주소를 통해 데이터를 주고 받을 수 있는 IP 프로토콜과 신뢰성 있는 데이터를 주고 받기 위한 TCP 프로토콜을 함께 일컫는 것이다.
+TCP/IP에서의 데이터 전송은 다음과 같이 이루어진다. HTTP 프로토콜을 사용한 www 서비스를 예로 들어보면 우선, 사용자는 웹 브라우저에서 URL을 입력하여 웹 페이지를 요청한다. 사용자의 요청을 TCP 계층에서 패킷화한 후, IP 계층에서 IP패킷으로 만들고 이더넷 카드로 이동하여 인터넷으로 전송된다. 요청한 IP로 패킷이 도착하면 이 패킷을 받은 서버의 이더넷카드는 패킷의 출처 등을 확인하고 정상적인 내용이라면 전송계층, 응용 계층으로 이동하고 내용을 확인 후 요청에 대한 응답을 전송계층으로 내려 왔던 방식과 동일하게 데이터를 내보낸다.
+![OSI와 TCP/IP](https://www.google.com/url?sa%3Di%26url%3Dhttps%3A%2F%2Fwww.guru99.com%2Ftcp-ip-model.html%26psig%3DAOvVaw3cTwABxB0by1UKJG1NDNRR%26ust%3D1678271311567000%26source%3Dimages%26cd%3Dvfe%26ved%3D0CBAQjRxqFwoTCIjX1_zNyf0CFQAAAAAdAAAAABAJ)
+## TCP와 UDP
+TCP는 연결지향적이고 흐름제어와 혼잡제어를 통해 신뢰성 있는 통신을 위해 사용되고, UDP는 비연결지향적이며 데이터를 주고 받을 때 사용된다. 
+## Socket과 Socket API 구분
+소켓이란 컴퓨터 네트워크를 사용하는 프로세스 간 통신의 엔드포인트를 의미한다. 소켓을 통해 데이터를 공유한다. 소켓 API는 소켓을 프로그래밍 인어를 통해 더 손쉽게 이용할 수 있게 하는 함수 집합들을 의미한다.
+## URI와 URL
+URI는 인터넷에서 리소스의 정보를 표현하기 위한 식별자이다. 그 중 URL은 URI의 일종으로서 리소스의 위치를 담고 있어 현재 원하는 리소스가 어느 위치에 있는지 알 수 있게하는 식별자이다.
+## 호스트, IP, DNS 그리고 URL의 구성요소
+호스트는 네트워크에 연결되어 있는 컴퓨터들을 의미한다. 이 때 각 PC별로 가지고 있는 고유 주소는 IP주소라고 한다. 각각의 IP주소 대신 해당 호스트를 쉽게 접근하기 위해 문자로 변환한 것을 도메인이라고 하며, IP주소를 도메인으로 치환시켜주는 역할을 하는 것이 DNS이다. 따라서 사용자는 비교적 기억하기 쉬운 도메인을 입력하면 IP 대신 해당 도메인을 가진 호스트로 이동할 수 있다.
+URL은 프로토콜/도메인:포트(port)/경로(path)/변수(parameter)/로 이루어져 있으며 포트는 리소스 접근을 위한 관문을 의미하고 경로는 리소스의 위치를 표현한다. 변수는 웹서버에 전달할 때 추가적으로 전달해야 하는 내용을 담고 있으며 key=value 형태를 띈다.
+
+## Java text blocks
+Java text blocks는  자바 15 이후 사용 가능한 여러 줄 String 형태를 의미한다. “”” “”” 로 둘러쌓인 텍스트 블럭은 블럭 안의 내용을 그대로 저장한다. 
+
+## Java InputStream, OutputStream
+ Java에서 Stream은 데이터를 주고받는 관문을 역할을 한다. InputStream은 데이터를 읽을 때 사용되는 추상클래스이고 OutputStream은 데이터를 쓸 때 사용되는 추상클래스이다. 
+위 추상클래스는 데이터를 입출력할 때 필요한 메서드들을 제공한다.
+## Java try-with-resources
+Java 7부터 적용된 기능으로 파일,  데이터베이스 연결, 소켓 등의 자원을 사용하고 자동으로 닫아주는 코드를 작성할 때 용이한 기능이다.
+```
+try(resource) {
+    // 자원사용
+}catch (Exception e) {
+    // 예외 처리
+}
+```
+위처럼 사용할 수 있으며 리소스가 Autocloseable 인터페이스를 구현한 객체만이 위 구문을 사용할 수 있다. 자원 사용이 종료되거나 예외가 발생하면 close()메서드가 자동으로 호출되어 자원을 안전히 해제할 수 있다.
