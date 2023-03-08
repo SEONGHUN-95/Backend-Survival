@@ -6,6 +6,7 @@ Java Non-Blocking I/O는 작업을 지원하는 새로운 방식을 제공한다
 ## Java Lambda expression(람다식)
 람다식은 이름이 없는 메서드이다. 매개변수와 구현부로만 이루어져 있는데 다음과 같이 쓸 수 있다.
 ```
+//람다식 예시
 (parameter) -> {body}
 (int a, int b) -> {return a+b;}
 
@@ -16,5 +17,20 @@ a -> {return a};
 (a,b) -> a > b ? a: b
 ```
 ### Java Functional interface(함수형 인터페이스)
-함수형 인터페이스란 하나의 추상메서드만을 가지고 있는 인터페이스를 말한다. 또, 추상메서드는 선언부만 있고 구현부는 미구현된 메서드를 의미한다. 
-람다식을 사용하여 함수형 인터페이스를 구현하면 클래스를 정의하지 않고 간단하게 사용할 수 있다.
+함수형 인터페이스란 하나의 추상메서드만을 가지고 있는 인터페이스를 말한다. 또, 추상메서드는 선언부만 있고 구현부는 미구현된 메서드를 의미한다. 람다식을 사용하여 함수형 인터페이스를 구현하면 클래스를 정의하지 않고 간단하게 사용할 수 있다. 이를 통해 코드의 가독성을 향상하고 불필요한 코드의 중복을 줄이며 컴파일러로 하여금 함수형 인터페이스임을 알릴 수 있다. 
+
+```
+// Function 함수형 인터페이스
+@FunctionalInterface
+public interface Function<T, R> {
+    R apply(T t);
+}
+```
+
+```
+// 람다식을 통해 Function 인터페이스를 구현한 코드
+Function<String, Integer> getLength = str -> str.length();
+int length = getLength.apply("Hello, world!");
+System.out.println(length); // 13
+```
+위의 예시와 같이 Function 인터페이스에 있는 apply()라는 유일한 추상 메서드를 람다식으로 구현하고 사용할 수 있다. Function 인터페이스를 람다식으로 구현하고 이를 getLength 변수에 저장, 인터페이스에 있던 apply 메서드를 호출하여 입력값을 처리한 결과를 얻는 것이다.

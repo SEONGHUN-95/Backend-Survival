@@ -1,1 +1,1 @@
-직접 간단한 웹 서버를 구현해보면서, HTTP를 제대로 이해하고 동시에 Spring Web MVC가 어떤 편의를 제공하는지 절실하게 느껴봅시다.
+# HTTP, Server and Spring
