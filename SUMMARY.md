@@ -1,20 +1,18 @@
 # Table of contents
-# GitBook
-* [Backend-Survival](README.md)
 
-# Weekly-Summary
+* [Backend-Survival](README.md)
 * [준비](week0.md)
 * [HTTP](subject1/subject1.md)
-    * [HTTP](subject1/what_is_http.md)
-    * [HTTP Server](subject1/http_server.md)
-    * [HTTP Client](subject1/http_client.md)
-    * [Java HTTP](subject1/java_http_server.md)
-    * [Spring Web MVC](subject1/Spring_mvc.md)
+  * [HTTP](subject1/what\_is\_http.md)
+  * [HTTP Server](subject1/http\_server.md)
+  * [HTTP Client](subject1/http\_client.md)
+  * [Java HTTP](subject1/java\_http\_server.md)
+  * [Spring Web MVC](subject1/Spring\_mvc.md)
 * [RESTful API](subject2/subject2.md)
-    * [Restful API](subject2/RESTfulAPI.md)
-    * [URI & MIME Type](subject2/URI&MIMEtype.md)
-    * [Collection Pattern](subject2/Collection_pattern.md)
-    * [Applying REST](subject2/RESTfulAPI_Spring.md)  
+  * [Restful API](subject2/RESTfulAPI.md)
+  * [URI & MIME Type](subject2/URI\&MIMEtype.md)
+  * [Collection Pattern](subject2/Collection\_pattern.md)
+  * [Applying REST](subject2/RESTfulAPI\_Spring.md)
 * [DTO & JSON & CORS](subject3/subject3.md)
     * [DTO](subject3/DTO.md)
     * [Serialization](subject3/Serialization.md)
@@ -23,3 +21,5 @@
 * [Layered Architecture](subject4/subject4.md)
     * [Layered Architecture](subject4/LayeredArchitecture.md)
     * [DDD(Domain Driven Design)](subject4/DDD.md)
+
+
