@@ -14,7 +14,12 @@
   * [Collection Pattern](subject2/Collection\_pattern.md)
   * [Applying REST](subject2/RESTfulAPI\_Spring.md)
 * [DTO & JSON & CORS](subject3/subject3.md)
-  * [DTO](subject3/DTO.md)
-  * [Serialization](subject3/Serialization.md)
-  * [Jackson ObjectMapper](subject3/Jackson.md)
-  * [CORS](subject3/CORS.md)
+    * [DTO](subject3/DTO.md)
+    * [Serialization](subject3/Serialization.md)
+    * [Jackson ObjectMapper](subject3/Jackson.md)
+    * [CORS](subject3/CORS.md)
+* [Layered Architecture](subject4/subject4.md)
+    * [Layered Architecture](subject4/LayeredArchitecture.md)
+    * [DDD(Domain Driven Design)](subject4/DDD.md)
+
+
