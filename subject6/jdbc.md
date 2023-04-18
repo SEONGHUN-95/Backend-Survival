@@ -3,6 +3,7 @@
 JDBC는 Java에서 각 데이터베이스로 연결할 수 있게 하는 API이다. JDBC를 통해 데이터베이스의 연결, 트랜잭션 관리, CRUD, 예외처리 등을 가능케한다. 이를 위해 JDBC는 여러 클래스와 인터페이스를 제공하는데, 해당 DBMS에 맞는 JDBC 드라이버 설치가 필요하다.(MySQL, PostgreSQL, Oracle 용 등의 드라이버가 각각 필요함)
 
 ```
+
 // jdbc 연결 예시
 import java.sql.*;
 
