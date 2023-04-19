@@ -1,67 +1,49 @@
-# ORM(Object Relational Mapping)
+# JPA
 
-ORM이란 객체(Object)와 Relational DB를 서로 매핑해주는 기술을 의미한다.
-데이터베이스에서는 여러 튜플의 집합으로 각 테이블별 데이터를 저장하고, OOP에서는 객체의 필드 값으로 데이터를 사용한다. 즉, DB와 객체 모두 스칼라 값으로 데이터를 표현하니 이를 연결해줌으로써 영속성 계층에서도 OOP 설계를 가능케하는 것이다.
-이를 통해 개발자는 Service layer와 Persistence layer간의 연결 코드를 작성할 필요가 없기 때문에 객체지향과 비즈니스 로직에 집중하여 효율적인 개발을 진행할 수 있다.
-하지만 실제 DB를 다루는 것보다 추상화된 단계에서 작업을 진행하다보니 DB 설계와 Relationship 설계가 더욱 중요해진다. 
-Object-Relational impedence mismatch은 객체와 DB간에 발생할 수 있는 잘못된 연결을 의미한다. 
-예컨대, OOP에서의 상속, 캡슐화, 다형성, 접근제어자 등의 개념을 DB에서 구현하기엔 어렵고 DB의 데이터 형식과 OOP가 다루는 형식이 다르며 트랜잭션의 단위까지도 상이하기 때문에 이를 해결하는 과정이 요구된다. ORM의 객체지향적인 데이터 접근 방식과 지연 로딩, 트랜잭션 관리 등을 통해 불일치를 최소화할 수 있다.
+## ORM(Object Relational Mapping)
 
-# JPA(Jakarta Persistence API)
+ORM이란 객체(Object)와 Relational DB를 서로 매핑해주는 기술을 의미한다. 데이터베이스에서는 여러 튜플의 집합으로 각 테이블별 데이터를 저장하고, OOP에서는 객체의 필드 값으로 데이터를 사용한다. 즉, DB와 객체 모두 스칼라 값으로 데이터를 표현하니 이를 연결해줌으로써 영속성 계층에서도 OOP 설계를 가능케하는 것이다. 이를 통해 개발자는 Service layer와 Persistence layer간의 연결 코드를 작성할 필요가 없기 때문에 객체지향과 비즈니스 로직에 집중하여 효율적인 개발을 진행할 수 있다. 하지만 실제 DB를 다루는 것보다 추상화된 단계에서 작업을 진행하다보니 DB 설계와 Relationship 설계가 더욱 중요해진다. Object-Relational impedence mismatch은 객체와 DB간에 발생할 수 있는 잘못된 연결을 의미한다. 예컨대, OOP에서의 상속, 캡슐화, 다형성, 접근제어자 등의 개념을 DB에서 구현하기엔 어렵고 DB의 데이터 형식과 OOP가 다루는 형식이 다르며 트랜잭션의 단위까지도 상이하기 때문에 이를 해결하는 과정이 요구된다. ORM의 객체지향적인 데이터 접근 방식과 지연 로딩, 트랜잭션 관리 등을 통해 불일치를 최소화할 수 있다.
 
-JPA란 Java의 대표적인 ORM 표준(API)이다. JPA를 구현한 구현체로서는 Hibernate, EclipseLink 등이 있는데 일반적으로 Hibernate를 많이 사용한다.
-JPA를 통해 JDBC에서 매 작업마다 사용했던 SQL문을 직접 사용하지 않고 OO 언어에서 객체를 불러다 쓰듯 데이터를 불러올 수 있다. 또 테이블에 튜플 하나 추가하면 모든 SQL문을 바꿔야 했던 것과 달리 JPA는 이를 대신 처리해준다. 하지만 JPA 또한 정확한 방법으로 사용하지 않았을 경우 1+N 문제 등을 야기한다.
+## JPA(Jakarta Persistence API)
 
-JPA에서 Entity는 영속적으로 관리되는 도메인 객체로서 DB의 테이블과 매핑된다. 또한, 엔티티의 각 필드값들은 DB 테이블의 각 튜플에 매핑된다. Entity는 도메인 클래스 상단에 @Entity 어노테이션을 달아 설정할 수 있고, 고유한 식별자를 가져 테이블의 Primary key와 주로 매핑된다. 또한, 영속성 컨텍스트에 의해 관리되고 엔티티간의 관계(1:1, 1:N, M,N) 설정이 가능하다. 
+JPA란 Java의 대표적인 ORM 표준(API)이다. JPA를 구현한 구현체로서는 Hibernate, EclipseLink 등이 있는데 일반적으로 Hibernate를 많이 사용한다. JPA를 통해 JDBC에서 매 작업마다 사용했던 SQL문을 직접 사용하지 않고 OO 언어에서 객체를 불러다 쓰듯 데이터를 불러올 수 있다. 또 테이블에 튜플 하나 추가하면 모든 SQL문을 바꿔야 했던 것과 달리 JPA는 이를 대신 처리해준다. 하지만 JPA 또한 정확한 방법으로 사용하지 않았을 경우 1+N 문제 등을 야기한다.
 
-![JPA](images/JPA.png)
+JPA에서 Entity는 영속적으로 관리되는 도메인 객체로서 DB의 테이블과 매핑된다. 또한, 엔티티의 각 필드값들은 DB 테이블의 각 튜플에 매핑된다. Entity는 도메인 클래스 상단에 @Entity 어노테이션을 달아 설정할 수 있고, 고유한 식별자를 가져 테이블의 Primary key와 주로 매핑된다. 또한, 영속성 컨텍스트에 의해 관리되고 엔티티간의 관계(1:1, 1:N, M,N) 설정이 가능하다.
 
-## 영속성 컨텍스트(Persistence Context)
+### 영속성 컨텍스트(Persistence Context)
 
-JPA Entity를 저장하는 환경을 의미한다. 엔티티 매니저를 통해 영속성 컨텍스트에 데이터를 저장하면 Entity는 영속성 컨텍스트에 의해 관리된다. 영속성 컨텍스트에 의해 관리되는 엔티티들은 1차 캐시를 활용하여 주고 받아지며, 쓰기 지연 SQL 저장소를 통해 트랜잭션을 활용할 수 있어 쓰기 지연이 가능하다.
-(1 EM -> 1 PC)
+JPA Entity를 저장하는 환경을 의미한다. 엔티티 매니저를 통해 영속성 컨텍스트에 데이터를 저장하면 Entity는 영속성 컨텍스트에 의해 관리된다. 영속성 컨텍스트에 의해 관리되는 엔티티들은 1차 캐시를 활용하여 주고 받아지며, 쓰기 지연 SQL 저장소를 통해 트랜잭션을 활용할 수 있어 쓰기 지연이 가능하다. (1 EM -> 1 PC)
 
 영속성 컨텍스트에서 이루어지는 Entity들의 동작 원리들은 다음과 같다.
 
-### 엔티티 저장
+#### 엔티티 저장
 
-persist() 메서드를 통해 영속성 컨텍스트에 엔티티를 저장하면 영속성 컨텍스트 안에 1차 캐시에 @Id로 잡아둔 키를 기준으로 저장된다.
-flush될 때까지 DB로 SQL query가 실행되지 않고 쓰기 지연 SQL 저장소에 쿼리들이 저장되어 있다가 트랜잭션 커밋이나, flush() 등의 메서드가 실행될 때 DB로 query가 넘어간다. 트랜잭션 단위로 commit 전까지 실제 DB에는 적용되지 않고 있는 것이다.
+persist() 메서드를 통해 영속성 컨텍스트에 엔티티를 저장하면 영속성 컨텍스트 안에 1차 캐시에 @Id로 잡아둔 키를 기준으로 저장된다. flush될 때까지 DB로 SQL query가 실행되지 않고 쓰기 지연 SQL 저장소에 쿼리들이 저장되어 있다가 트랜잭션 커밋이나, flush() 등의 메서드가 실행될 때 DB로 query가 넘어간다. 트랜잭션 단위로 commit 전까지 실제 DB에는 적용되지 않고 있는 것이다.
 
-### 엔티티 조회
+#### 엔티티 조회
 
 엔티티를 조회하면 우선 1차 캐시에 필요한 데이터가 있는지 확인하여 가져오고, 만약 데이터가 없다면 DB에서 조회하여 1차 캐시에 저장 후 그 데이터를 반환해온다.
 
-### 엔티티 수정
+#### 엔티티 수정
 
-엔티티를 수정할 때에는 최초 엔티티가 저장되었을 때의 상태를 복사해둔 스냅샷을 활용한다.
-JPA에서 flush가 발생하면, 1차 캐시의 스냅샷과 현재 엔티티를 대조하여(Dirty checking) 변경되었다면 수정 쿼리를 생성하여 SQL 저장소로 보낸다.
-이후 저장소의 query를 DB로 보낸 후 commit을 진행한다. 
+엔티티를 수정할 때에는 최초 엔티티가 저장되었을 때의 상태를 복사해둔 스냅샷을 활용한다. JPA에서 flush가 발생하면, 1차 캐시의 스냅샷과 현재 엔티티를 대조하여(Dirty checking) 변경되었다면 수정 쿼리를 생성하여 SQL 저장소로 보낸다. 이후 저장소의 query를 DB로 보낸 후 commit을 진행한다.
 
-### 엔티티 삭제
+#### 엔티티 삭제
 
 엔티티 삭제도 엔티티 저장과 마찬가지로 즉시 삭제되는 것이 아니라 JPA의 flush에 맞추어 1차 SQL저장소의 쿼리가 DB로 날아간다.
 
+### Persistence, EntityManagerFactory, EntityManager
 
-## Persistence, EntityManagerFactory, EntityManager
+JPA를 사용하기 위해서는 몇 가지 준비 과정이 필요하다. 우선 persistence.xml 파일에서 설정 정보를 불러와 EntityManagerFactory를 생성한다. 이는 어플리케이션 전체에서 한 번만 생성되고 공유되어 사용된다. 이후 EntityManagerFactory를 통해 EntityManager를 생성할 수 있는데, EntityManager는 영속성 컨텍스트에 엔티티를 두고 관리하며 데이터베이스 커넥션을 통해 DB를 다루는 역할을 한다. 엔티티 매니저를 사용하고 난 후에는 Entity Manager를, 어플리케이션을 종료할 때에는 EntityManagerFactory를 종료해야 한다.
 
-JPA를 사용하기 위해서는 몇 가지 준비 과정이 필요하다.
-우선 persistence.xml 파일에서 설정 정보를 불러와 EntityManagerFactory를 생성한다. 이는 어플리케이션 전체에서 한 번만 생성되고 공유되어 사용된다.
-이후 EntityManagerFactory를 통해 EntityManager를 생성할 수 있는데, EntityManager는 영속성 컨텍스트에 엔티티를 두고 관리하며 데이터베이스 커넥션을 통해 DB를 다루는 역할을 한다. 
-엔티티 매니저를 사용하고 난 후에는 Entity Manager를, 어플리케이션을 종료할 때에는 EntityManagerFactory를 종료해야 한다.
-
-
-
-# JPQL(Java Persistence Query Language)
+## JPQL(Java Persistence Query Language)
 
 JPQL이란 Java의 객체 지향 쿼리 언어를 의미한다. JPQL은 데이터베이스가 아닌 엔티티 객체를 대상으로 작성되는 쿼리이며 결국 JPA에서 SQL로 변환되어 DB에서 실행, 결과를 도출한다. SQL과 동일하게 Create, Insert, projection,Join, 정렬, 그룹화 등이 가능하고 서브쿼리 작성도 가능하다. JPA로 사용하기 복잡하거나 어려운 쿼리들을 JPQL로 직접 짜곤 한다.
 
-# Spring Data JPA
+## Spring Data JPA
 
-Spring Data JPA는 스프링 프레임워크에서 JPA를 쉽게 사용할 수 있게 해주는 모듈이다. Spring Data JPA를 통해 메서드 이름을 규칙에 맞추어 명명하는 것만으로 반복되는 CRUD 뿐만 아니라 여러 조건까지 충족하는 메서드를 사용할 수 있게 된다. 즉, 구현 클래스 없이 인터페이스만으로도 간단하게 데이터를 조작할 수 있다. 
+Spring Data JPA는 스프링 프레임워크에서 JPA를 쉽게 사용할 수 있게 해주는 모듈이다. Spring Data JPA를 통해 메서드 이름을 규칙에 맞추어 명명하는 것만으로 반복되는 CRUD 뿐만 아니라 여러 조건까지 충족하는 메서드를 사용할 수 있게 된다. 즉, 구현 클래스 없이 인터페이스만으로도 간단하게 데이터를 조작할 수 있다.
 
-## Repository & DAO
+### Repository & DAO
 
 둘 다 영속성 로직에 대한 객체지향적인 인터페이스를 제공하여 도메인과 영속성 계층간의 관심사의 분리를 달성하는 역할을 한다. 하지만 Repository는 도메인 계층에 속하여 메모리로 올라온 데이터에 대한 처리를 담당하고, DAO는 영속성 계층에 해당하여 영속성 계층 내부의 CRUD 쿼리와 매핑되는 작업들을 직접 실행하는 계층이라고 볼 수 있겠다.
-
-
