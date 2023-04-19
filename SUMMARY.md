@@ -29,3 +29,4 @@
     * [JDBC](subject6/jdbc.md)
 * [JPA](subject7/subject7.md)
     * [JPA](subject7/JPA.md)
+    * [JPA_detail](subject7/JPA_detail.md)
