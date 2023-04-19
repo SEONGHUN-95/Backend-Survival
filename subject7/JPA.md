@@ -51,7 +51,6 @@ JPA를 사용하기 위해서는 몇 가지 준비 과정이 필요하다.
 엔티티 매니저를 사용하고 난 후에는 Entity Manager를, 어플리케이션을 종료할 때에는 EntityManagerFactory를 종료해야 한다.
 
 
-
 # JPQL(Java Persistence Query Language)
 
 JPQL이란 Java의 객체 지향 쿼리 언어를 의미한다. JPQL은 데이터베이스가 아닌 엔티티 객체를 대상으로 작성되는 쿼리이며 결국 JPA에서 SQL로 변환되어 DB에서 실행, 결과를 도출한다. SQL과 동일하게 Create, Insert, projection,Join, 정렬, 그룹화 등이 가능하고 서브쿼리 작성도 가능하다. JPA로 사용하기 복잡하거나 어려운 쿼리들을 JPQL로 직접 짜곤 한다.
