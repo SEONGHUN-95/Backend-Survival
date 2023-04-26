@@ -31,4 +31,4 @@
     * [JPA](subject7/JPA.md)
     * [JPA_detail](subject7/JPA_detail.md)
 * [DDD](subject8/subject8.md)
-    *[DDD](subject8/DDD.md)
+    * [DDD](subject8/DDD.md)
