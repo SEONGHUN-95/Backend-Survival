@@ -34,6 +34,7 @@
   * [DDD](subject8/DDD.md)
 * [Hexagonal Architecture](subject9/subject9.md)
   * [SOLID](subject9/SOLID.md)
-  * [Hexagonal Architecture](subject9/Hexagonal\_Architecture.md)
-  * [\[GOO\](subject9/GOO.md)](subject9/goo-subject9-goo.md.md)
-  * [\[DDD\](subject9/DDD.md)](subject9/ddd-subject9-ddd.md.md)
+  * [Hexagonal Architecture](subject9/Hexagonal_Architecture.md)
+  * [GOO](subject9/GOO.md)
+  * [DDD](subject9/DDD.md)
+
