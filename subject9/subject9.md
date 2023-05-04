@@ -2,5 +2,5 @@
 
 * [SOLID](subject9/SOLID.md)
 * [Hexagonal Architecture](subject9/Hexagonal_Architecture.md)
-* [GOO](subject9/GOO.md)
+* [우아한 객체지향](subject9/GOO.md)
 * [DDD](subject9/DDD.md)
