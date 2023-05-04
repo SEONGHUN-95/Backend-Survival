@@ -35,5 +35,5 @@
 * [Hexagonal Architecture](subject9/subject9.md)
     * [SOLID](subject9/SOLID.md)
     * [Hexagonal Architecture](subject9/Hexagonal_Architecture.md)
-    * [GOO] (subject9/GOO.md)
-    * [DDD] (subject9/DDD.md)
+    * [GOO](subject9/GOO.md)
+    * [DDD](subject9/DDD.md)
