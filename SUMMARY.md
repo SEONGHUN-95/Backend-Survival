@@ -43,3 +43,5 @@
     * [etc](subject10/etc.md)
 * [File Upload](subject11/subject11.md)
     * [File Upload](subject11/FileUpload.md)
+* [CQRS_Redis](subject12/CQRS.md)
+    * [CQRS_Redis](subject12/CQRS.md)
